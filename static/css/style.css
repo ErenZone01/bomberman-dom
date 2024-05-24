@@ -1,0 +1,284 @@
+:root {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgba(250, 250, 250, 0.571);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+
+
+#user-space-title {
+    color: #f0f0f0;
+    margin-bottom: -15px;
+    /* Ajustez cette valeur pour réduire l'espacement en bas du h1 */
+}
+
+.messages {
+    height: 50vh;
+    /* Ajustez cette valeur selon vos besoins */
+    width: 50vw;
+    max-width: 600px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 2px;
+    /* Espace entre .chat et les inputs */
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 5px solid rgb(90, 88, 88);
+    overflow-y: auto;
+}
+
+.message-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px; */
+    background-color: #f0f0f0;
+}
+
+.message-input {
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+
+button[type="button"] {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('../img/foto.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+#timer,
+#infoUser,
+h2 {
+    z-index: 2;
+    color: #ffffff;
+}
+
+#Go_button {
+    z-index: 2;
+    background-color: #ffffff;
+    color: #000;
+
+}
+
+label {
+    font-weight: bolder;
+}
+
+/* .chat_group {
+    height: 50%;
+    width: 50%;
+    background-color: rgb(226, 216, 205);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.container {
+    width: 90vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    /* gap: 1px; */
+    /* background-color: black; */
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+.bomb {
+    width: 40px;
+    height: 40px;
+    /* grid-column: 2; */
+    position: relative;
+    /* grid-row: 2; */
+    transition: all 0.1s;
+}
+
+.sprite {
+    width: 40px;
+    /* Adjusted for the desired frame width */
+    height: 40px;
+    /* Adjusted for the desired frame height */
+    background-image: url('../img/explosion.png');
+    /* Path to your sprite sheet */
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 520px 188px;
+    /* background-color: black; */
+    /* Adjust to scale the entire sprite sheet */
+    position: relative;
+}
+
+.grid-item {
+    /* border: 1px solid #ccc; */
+    background-color: #f0f0f0;
+    /* Optionnel, couleur de fond */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 95%;
+}
+
+.healthbarre {
+    width: 50px;
+    height: 10px;
+    background-color: white;
+    left: 0;
+    top: -15px;
+    border-style: solid;
+    position: absolute;
+    /* border-radius: 10%; */
+    overflow: hidden;
+}
+
+.health {
+    height: 100%;
+    background-color: chartreuse;
+    transition: width 0.3 ease-in-out;
+}
+
+.healthPlayer {
+    height: 100%;
+    background-color: red;
+    transition: width 0.1 ease-in-out;
+}
+
+.debut {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-image: url(../img/foto.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Ajout d'espace en bas */
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .chat {
+        width: 100%;
+        height: 40vh;
+    }
+
+    .message-input {
+        flex-direction: column;
+    }
+
+    input[type="text"],
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .timer {
+        font-size: 50em;
+    }
+}
+
+
+.chatbox {
+    z-index: 2;
+}
+
+button {
+    width: 25%;
+    /* Ajustez cette valeur selon vos besoins */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.ombre {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Couleur noire semi-transparente */
+    display: block;
+    z-index: 1;
+}
+
+.room {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 3em;
+    color: #ffffff;
+    /* Taille du texte augmentée */
+    font-family: "Times New Roman", Times, serif;
+    z-index: 2;
+}
+
+
+.msg {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    /* Centrer le texte à l'intérieur du message */
+    margin-left: auto;
+    /* Centrer horizontalement */
+    margin-right: auto;
+    /* Centrer horizontalement */
+    background-color: #f9f9f9;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 14px;
+    display: block;
+}
+
+.conteur {
+    position: absolute;
+    right: 5%;
+    top: 0%;
+    border-radius: 180%;
+    border-color: #ffffff;
+    background-color: #f0f0f0;
+    z-index: 2;
+    padding: 2%;
+    color: #000;
+}
